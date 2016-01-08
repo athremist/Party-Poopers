@@ -1,27 +1,77 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Player : MonoBehaviour
 {
-    //This class is a testing prototype. It will be removed later.
+    private uint m_SpacesToMove;
 
-    Vector3 movement;
-    float horizontal;
-    float vertical;
-    // Use this for initialization
+    //Properties
+    private GameObject CurrentPath
+    {
+        get;
+        set;
+    }
+    private Transform CurrentTile
+    {
+        get;
+        set;
+    }
+    private bool HasRolled
+    {
+        get;
+        set;
+    }
+
     void Start()
+    {
+        HasRolled = false;
+    }
+
+    void Update()
+    {
+        //Start overlay when the player starts their turn
+        StartTurn();
+
+        StartActions();
+
+        Movement();
+    }
+
+    private void StartTurn()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StartActions()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+        while(HasRolled == false)
+        {
+            if (Input.GetKey(KeyCode.Space))//Temp
+            {
+                RollDice();
+            }
+            //else if //use an item?
+        }
+        //Will exit function, once player has rolled.
+    }
 
-        movement = new Vector3(horizontal, 0.0f, vertical);
+    private void Movement()
+    {
+        while(m_SpacesToMove > 0)
+        {
+            UpdatePath();
+        }
+    }
 
-        transform.Translate(movement * Time.deltaTime * 5);
+    private void UpdatePath()
+    {
+        
+    }
+
+    // Determines how many spaces the player will move.
+    private void RollDice()
+    {
+        m_SpacesToMove = 3;
     }
 }

@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// This class contains all the info required for tiles to determine where to move or where a player is on the map.
 public class Tile : MonoBehaviour
 {
+    [SerializeField]
+    private bool m_DoesPathLoop;
 	private GameObject[] m_Tiles;
 	private int m_NumberOfTiles;
 
@@ -20,7 +23,7 @@ public class Tile : MonoBehaviour
 
 	private void SetTiles()
 	{
-		for (int i = 0; i < m_NumberOfTiles++; i++)
+		for (int i = 0; i < m_NumberOfTiles; i++)
 		{
 			m_Tiles [i] = this.gameObject.transform.GetChild (i).gameObject;
 		}
@@ -37,4 +40,9 @@ public class Tile : MonoBehaviour
 		//If we got here then tile not in range
 		return null;
 	}
+
+    public bool IsLoopablePath()
+    {
+        return m_DoesPathLoop;
+    }
 }

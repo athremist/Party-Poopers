@@ -1,0 +1,12 @@
+PartyPoopers: Version 0.1
+
+Rules:
+-At the end of every round all players will play a mini-game.
+Those who win will earn "CurrencyNameHere" x AmountNumber
+-In order to win they must reach a certain space and play a solo mini-game.
+(Undecided)To do so they must have enough "CurrencyNameHere" to pay to play the mini-game.
+(Undecided)If they win they will win the game / they will win "SomeOtherCurrency or something",
+which will determine who will win at the end of the game(this option would require number of rounds).
+
+Comments:
+//Feel free to add your undecided ideas here so you can keep track of them ^_^

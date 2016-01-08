@@ -450,7 +450,7 @@ GameObject:
   - 4: {fileID: 522730758}
   - 114: {fileID: 522730759}
   m_Layer: 0
-  m_Name: Tiles
+  m_Name: MainPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,9 +514,6 @@ Transform:
   - {fileID: 184010784}
   - {fileID: 90118025}
   - {fileID: 1967489237}
-  - {fileID: 1096312712}
-  - {fileID: 524726656}
-  - {fileID: 2063735385}
   m_Father: {fileID: 189807761}
   m_RootOrder: 2
 --- !u!114 &522730759
@@ -530,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68459c95f0bf8cf4ca350316f79fe26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DoesPathLoop: 0
 --- !u!1 &524726655
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,8 +553,91 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 522730758}
-  m_RootOrder: 49
+  m_Father: {fileID: 639707404}
+  m_RootOrder: 1
+--- !u!1 &554680753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 554680754}
+  - 114: {fileID: 554680755}
+  m_Layer: 0
+  m_Name: SidePath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554680754
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554680753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 189807761}
+  m_RootOrder: 4
+--- !u!114 &554680755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554680753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68459c95f0bf8cf4ca350316f79fe26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoesPathLoop: 0
+--- !u!1 &639707403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 639707404}
+  - 114: {fileID: 639707405}
+  m_Layer: 0
+  m_Name: StartPath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639707404
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639707403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1096312712}
+  - {fileID: 524726656}
+  - {fileID: 2063735385}
+  m_Father: {fileID: 189807761}
+  m_RootOrder: 3
+--- !u!114 &639707405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639707403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68459c95f0bf8cf4ca350316f79fe26b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoesPathLoop: 0
 --- !u!1 &715027954
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,8 +1071,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 522730758}
-  m_RootOrder: 48
+  m_Father: {fileID: 639707404}
+  m_RootOrder: 0
 --- !u!1 &1178537438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1478,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1438001410}
   m_LocalRotation: {x: 0.32422507, y: 0, z: 0, w: 0.9459801}
-  m_LocalPosition: {x: 0, y: 5.16, z: -6.79}
+  m_LocalPosition: {x: 0, y: 5.16, z: -7.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1697,8 +1778,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.25, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 522730758}
-  m_RootOrder: 50
+  m_Father: {fileID: 639707404}
+  m_RootOrder: 2
 --- !u!1 &2092275647
 GameObject:
   m_ObjectHideFlags: 0
