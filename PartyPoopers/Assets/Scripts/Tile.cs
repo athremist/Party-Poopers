@@ -33,9 +33,8 @@ public class Tile : MonoBehaviour
 	{
 		if (aIndex < m_NumberOfTiles)
 		{
-			Transform tileHolder = this.gameObject.transform;
-			//Returns the tile based on the index
-			return tileHolder.GetChild(aIndex).gameObject.transform;
+            //Returns the tile based on the index
+            return m_Tiles[aIndex].transform; 
 		}
 		//If we got here then tile not in range
 		return null;

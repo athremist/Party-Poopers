@@ -26,28 +26,30 @@ public class Player : MonoBehaviour
     void Start()
     {
         HasRolled = false;
+        CurrentPath = GameObject.FindGameObjectWithTag("Path/Main");
     }
 
     void Update()
     {
         //Start overlay when the player starts their turn
         StartTurn();
-
-        StartActions();
-
+        if (HasRolled == false)
+        {
+            StartActions();
+        }
         Movement();
     }
 
     private void StartTurn()
     {
-
+        HasRolled = false;
     }
 
     private void StartActions()
     {
-        while(HasRolled == false)
+        if(HasRolled == false)
         {
-            if (Input.GetKey(KeyCode.Space))//Temp
+            if (Input.GetKeyDown(KeyCode.Space))//Temp
             {
                 RollDice();
             }
@@ -61,17 +63,39 @@ public class Player : MonoBehaviour
         while(m_SpacesToMove > 0)
         {
             UpdatePath();
-        }
-    }
 
-    private void UpdatePath()
-    {
-        
+            //Getting the tile script in order to get the next tile to move to
+            Tile tile = CurrentPath.GetComponent<Tile>();
+            int tileCount = CurrentPath.transform.childCount;
+
+            if (CurrentTile != null)
+            {
+                //Sets CurrentTile to the next tile in the path
+                CurrentTile = tile.GetTileForIndex((CurrentTile.GetSiblingIndex() + 1) % tileCount);    
+            }
+            else
+            {
+                CurrentTile = tile.GetTileForIndex(0);
+            }
+
+            while(transform.position != CurrentTile.position)
+            {
+                transform.position = Vector3.Lerp(transform.position, CurrentTile.position, 10 * Time.deltaTime);
+            }
+
+            m_SpacesToMove--;
+        }
     }
 
     // Determines how many spaces the player will move.
     private void RollDice()
     {
         m_SpacesToMove = 3;
+        HasRolled = true;
+    }
+
+    private void UpdatePath()
+    {
+        
     }
 }
